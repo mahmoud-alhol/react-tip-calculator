@@ -5,7 +5,7 @@ import Reset from "./Reset";
 import Total from "./Total";
 
 function App() {
-  const [bill, setBill] = useState(0);
+  const [bill, setBill] = useState('');
   const [yourRate, setYourRate] = useState(0);
   const [friendRate, setFriendRate] = useState(0);
   return (
