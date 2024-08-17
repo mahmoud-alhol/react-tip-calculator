@@ -5,9 +5,15 @@ import Reset from "./Reset";
 import Total from "./Total";
 
 function App() {
-  const [bill, setBill] = useState('');
+  const [bill, setBill] = useState("");
   const [yourRate, setYourRate] = useState(0);
   const [friendRate, setFriendRate] = useState(0);
+
+  function handleReset() {
+    setBill("");
+    setYourRate(0);
+    setFriendRate(0);
+  }
   return (
     <div>
       <Bill bill={bill} onBill={setBill} />
@@ -18,7 +24,7 @@ function App() {
         <span>How much did your friend like the service?</span>
       </Rate>
       <Total bill={bill} yourRate={yourRate} friendRate={friendRate} />
-      <Reset onBill={setBill} onYourRate={setYourRate} onFriendRate={setFriendRate} />
+      <Reset onReset={handleReset} />
     </div>
   );
 }
