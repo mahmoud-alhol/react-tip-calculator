@@ -1,9 +1,9 @@
 import React from "react";
 
-function Rate({rate, onRate}) {
+function Rate({rate, onRate,children}) {
   return (
     <div>
-      <span>How much did you like the service? </span>
+      <span>{children}</span>
       <select value={rate} onChange={(e) => onRate(Number(e.target.value))}>
         <option value="0">Dissatisfied (0%)</option>
         <option value="1">It was ok (5%)</option>
