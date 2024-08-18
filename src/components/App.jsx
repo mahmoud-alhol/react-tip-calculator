@@ -23,8 +23,12 @@ function App() {
       <Rate rate={friendRate} onRate={setFriendRate}>
         <span>How much did your friend like the service?</span>
       </Rate>
-      <Total bill={bill} yourRate={yourRate} friendRate={friendRate} />
-      <Reset onReset={handleReset} />
+      {bill > 0 && (
+        <>
+          <Total bill={bill} yourRate={yourRate} friendRate={friendRate} />
+          <Reset onReset={handleReset} />
+        </>
+      )}
     </div>
   );
 }
